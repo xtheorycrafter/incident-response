@@ -1,0 +1,51 @@
+## dealing with ransomware? this might be somewhat useful for general triage
+## rev1.0
+## distribution: public
+
+- Immediate Action (Containment)
+* Utilise information contained within the ransomware warning to search online (using a non-affected computer)for further information. E.g if it says send a mail to “ransomware@gmail.com” do a search for this. 
+*Attempt to identify which strain of ransomware is responsible snf check if a decryption tool is available:
+https://id-ransomware.malwarehunterteam.com
+https://www.nomoreransom.org/crypto-sheriff.php
+* Disconnect affected systems
+* Image each drive and store (there might not be a file decryptor available publically now but there might be in future)
+* Identify initial compromise vector
+* Setup triggers based on IOCs to detect new affected systems — Usually some exe file that was downloaded
+* Corporate comms to send out notification organization wide to raise awareness among user base not to click on suspicious attachments or plug in random USB drives found in the carpark into the computers
+* On the fly defence to be deployed to reduce the threat surface - eg: mailflow rules in exchange
+* Notify insurance company and ask what their support is for cyber-security incidents
+* Consider notifying appropriate authorities (if relevant)
+
+- Mid-incident Action (Assessment & Recovery)
+* Identify type and sensitivity of data which has been compromised
+* All egress/ingress traffic to be SPAN’ed to a separate switch port and analysed. All other logs should be correlated and threat hunting to be performed. — Ensure that timestamps are not out of sync
+* Set up IOC trigger list on alerting mechanism 
+* Roll out the tape backups or whatever backups there are if a decision is made to restore
+* Assume all passwords on the affected devices have been compromised and change them using a non-affected device
+* Remote Access Protocol is common threat entry point. Suggest shutdown or more secure implementation measure such as two factor authentication
+* If other restore attempts do not work, attempt to recover using tools such as:
+http://www.shadowexplorer.com (free)
+http://www.easeus.com/ad/data-recovery-wizard.htm
+
+
+* If in doubt, wipe the disk clean and reload the OS — Don’t take chances here
+-----PII affected-----
+* If PII is involved, consider personnel data breached - All affected tokens, passwords, etc MUST be reset or re-issued immediately
+* If personnel is breached, organization should watch out for fraud or impersonation. Some level of fraud detection/control must be implemented
+* Appropriate regulators to be informed (if necessary)
+
+- Post-incident Action (Long term remediation)
+* Set up a proper backup strategy and test it
+* Security awareness training for end users
+* Segmentation of the network; this isn’t 1980
+* Penetration Tests/Red Team exercise
+* Incident Response planning and assessment
+* On-going threat hunting
+* Identification and classification of data within the organization
+* Identification of technical controls and their respective effectiveness
+* Utilise playbooks for response and hardening such as https://www.demisto.com/playbook-for-handling-ransomware-infections/
+* Get some workable threat intelligence or at least, data from abuse.ch, alienvault, etc.
+
+NOTE: If the data must be recovered (ie: mission critical), ensure that the systems are hardened and defences are working prior to paying the ransom; you don’t want to get blindsided by another attack the moment you pay.
+
+

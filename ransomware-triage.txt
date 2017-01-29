@@ -4,13 +4,16 @@
 
 - Immediate Action (Containment)
 * Utilise information contained within the ransomware warning to search online (using a non-affected computer)for further information. E.g if it says send a mail to “ransomware@gmail.com” do a search for this. 
-*Attempt to identify which strain of ransomware is responsible snf check if a decryption tool is available:
+* Only do what you need to do on the infected computer. Some ransomware doesn't block your computer but replaces folders and files with malicious links that take further actions on clicking (e.g. Spora)
+* Don't reboot. The ransomware might encrypt further files if the computer is rebootet (e.g. Petya).
+* Attempt to identify which strain of ransomware is responsible snf check if a decryption tool is available:
 https://id-ransomware.malwarehunterteam.com
 https://www.nomoreransom.org/crypto-sheriff.php
 * Disconnect affected systems
 * Image each drive and store (there might not be a file decryptor available publically now but there might be in future)
+* If possible, take a memory dump
 * Identify initial compromise vector
-* Setup triggers based on IOCs to detect new affected systems — Usually some exe file that was downloaded
+* Setup triggers based on IOCs to detect new affected systems — Usually some exe file that was downloaded. Often, the exe files containing the actual malware have been downloaded by another script (wsf, vbe, excel/word macro, javascript)
 * Corporate comms to send out notification organization wide to raise awareness among user base not to click on suspicious attachments or plug in random USB drives found in the carpark into the computers
 * On the fly defence to be deployed to reduce the threat surface - eg: mailflow rules in exchange
 * Notify insurance company and ask what their support is for cyber-security incidents
@@ -23,6 +26,7 @@ https://www.nomoreransom.org/crypto-sheriff.php
 * Roll out the tape backups or whatever backups there are if a decision is made to restore
 * Assume all passwords on the affected devices have been compromised and change them using a non-affected device
 * Remote Access Protocol is common threat entry point. Suggest shutdown or more secure implementation measure such as two factor authentication
+* In few cases, malware fails to disable windows restore mechanisms and shadowcopies, so you might be able to restore files. If you export any restored files from the system, treat them with caution and check them for infection.
 * If other restore attempts do not work, attempt to recover using tools such as:
 http://www.shadowexplorer.com (free)
 http://www.easeus.com/ad/data-recovery-wizard.htm
@@ -46,6 +50,7 @@ http://www.easeus.com/ad/data-recovery-wizard.htm
 * Utilise playbooks for response and hardening such as https://www.demisto.com/playbook-for-handling-ransomware-infections/
 * Get some workable threat intelligence or at least, data from abuse.ch, alienvault, etc.
 
-NOTE: If the data must be recovered (ie: mission critical), ensure that the systems are hardened and defences are working prior to paying the ransom; you don’t want to get blindsided by another attack the moment you pay.
+NOTE: If the data must be recovered (ie: mission critical), ensure that the systems are hardened and defences are working prior to paying the ransom; you don’t want to get blindsided by another attack the moment you pay. 
+Be aware that when you pay ransom, you are supporting ransomware distribution.
 
 

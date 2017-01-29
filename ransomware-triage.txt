@@ -1,6 +1,7 @@
 ## dealing with ransomware? this might be somewhat useful for general triage
 ## rev1.0
 ## distribution: public
+## revision will stay the same unless major changes are added to the content
 
 - Immediate Action (Containment)
 * Utilise information contained within the ransomware warning to search online (using a non-affected computer)for further information. E.g if it says send a mail to “ransomware@gmail.com” do a search for this. 

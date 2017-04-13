@@ -1,5 +1,5 @@
 ## dealing with ransomware? this might be somewhat useful for general triage
-## rev1.0
+## rev1.4
 ## distribution: public
 ## revision will stay the same unless major changes are added to the content
 

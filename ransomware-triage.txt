@@ -7,6 +7,7 @@
 * Utilise information contained within the ransomware warning to search online (using a non-affected computer)for further information. E.g if it says send a mail to “ransomware@gmail.com” do a search for this. 
 * Only do what you need to do on the infected computer. Some ransomware doesn't block your computer but replaces folders and files with malicious links that take further actions on clicking (e.g. Spora)
 * Don't reboot. The ransomware might encrypt further files if the computer is rebootet (e.g. Petya).
+* Don't reboot/shutdown - Forensics artifacts residing in memory are likely to be lost in the case of a reboot/shutdown.
 * Attempt to identify which strain of ransomware is responsible snf check if a decryption tool is available:
 https://id-ransomware.malwarehunterteam.com
 https://www.nomoreransom.org/crypto-sheriff.php
